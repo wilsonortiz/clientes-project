@@ -1,0 +1,15 @@
+type Cliente{
+            id:ID
+            nombre:String
+            apellido:String
+            empresa:String
+            edad:Int
+}
+
+type Query{
+               """ Retorna cliente"""
+            getCliente(id : ID):Cliente
+}
+
+
+ 
