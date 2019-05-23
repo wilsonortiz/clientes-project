@@ -1,4 +1,4 @@
-import { Field, ID, InputType, Int, ObjectType } from 'type-graphql';
+import { Field, InputType, ObjectType } from 'type-graphql';
 
 @ObjectType()
 @InputType('EmailInput')

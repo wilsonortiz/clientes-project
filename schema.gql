@@ -7,9 +7,10 @@ input ClienteInput {
   nombre: String!
   apellido: String!
   empresa: String
-  edad: Float
+  fechaNac: DateTime!
   tipo: String!
   emails: [EmailInput!]!
+  pedidos: [PedidoInput!]!
 }
 
 type ClienteType {
@@ -17,10 +18,16 @@ type ClienteType {
   nombre: String
   apellido: String
   empresa: String
-  edad: Float
+  fechaNac: String!
   tipo: String
   emails: [Email!]!
+  pedidos: [Pedido!]!
 }
+
+"""
+The javascript `Date` as string. Type represents date and time as the ISO Date string.
+"""
+scalar DateTime
 
 type Email {
   email: String!
@@ -34,6 +41,16 @@ type Mutation {
   createClient(input: ClienteInput!): ClienteType!
   updateClient(input: ClienteInput!, id: String!): ClienteType!
   deleteClient(id: String!): String!
+}
+
+type Pedido {
+  nombre: String!
+  precio: Float!
+}
+
+input PedidoInput {
+  nombre: String!
+  precio: Float!
 }
 
 type Query {

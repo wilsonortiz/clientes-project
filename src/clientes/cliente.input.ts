@@ -1,5 +1,6 @@
 import { Field, InputType, Int } from 'type-graphql';
 import { Email } from '../types/clientes.type.email';
+import { Pedido } from '../types/clientes.type.pedidos';
 
 @InputType()
 export class ClienteInput {
@@ -13,9 +14,8 @@ export class ClienteInput {
   @Field({ nullable: true })
   readonly empresa?: string;
 
-  // @ts-ignore
-  @Field({ nullable: true }, () => Int)
-  readonly edad?: number;
+  @Field(() => Date)
+  readonly fechaNac: string;
 
   @Field(() => String)
   readonly tipo: string;
@@ -23,5 +23,9 @@ export class ClienteInput {
   // @ts-ignore
   @Field(() => Email)
   readonly emails: Email[];
+
+  // @ts-ignore
+  @Field(() => Pedido)
+  readonly pedidos: Pedido[];
 
 }

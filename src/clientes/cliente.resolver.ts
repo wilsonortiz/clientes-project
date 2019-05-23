@@ -2,7 +2,6 @@ import { Resolver, Query, Mutation, Args } from '@nestjs/graphql';
 import { ClienteType } from './cliente.type';
 import { ClienteService } from './cliente.service';
 import { ClienteInput } from './cliente.input';
-import { ClientesSchema } from '../schemas/cliente.schema';
 
 @Resolver(of => ClienteType)
 export class ClienteResolver {

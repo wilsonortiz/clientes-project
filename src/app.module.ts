@@ -11,7 +11,7 @@ import { ClienteService } from './clientes/cliente.service';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://localhost/clientes', {useNewUrlParser: true }),
+    MongooseModule.forRoot('mongodb://localhost/clientes', { useNewUrlParser: true }),
     GraphQLModule.forRoot({
       autoSchemaFile: 'schema.gql',
     }),

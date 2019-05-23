@@ -1,8 +1,8 @@
 {
     "name": "clientes-project",
     "version": "0.0.1",
-    "description": "",
-    "author": "",
+    "description": "API graphql de clientes y pedidos",
+    "author": "wilsonortiztr@gmail.com",
     "license": "MIT",
     "scripts": {
         "build": "tsc -p tsconfig.build.json",

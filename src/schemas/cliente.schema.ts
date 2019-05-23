@@ -4,7 +4,8 @@ export const ClientesSchema = new mongoose.Schema({
   nombre: String,
   apellido: String,
   empresa: String,
-  edad: Number,
+  fechaNac: Date,
   tipo: String,
   emails: Array,
+  pedidos: Array,
 });
