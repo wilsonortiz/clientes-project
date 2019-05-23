@@ -3,6 +3,41 @@
 # !!!   DO NOT MODIFY THIS FILE BY YOURSELF   !!!
 # -----------------------------------------------
 
+input ClienteInput {
+  nombre: String!
+  apellido: String!
+  empresa: String
+  edad: Float
+  tipo: String!
+  emails: [EmailInput!]!
+}
+
+type ClienteType {
+  _id: ID!
+  nombre: String
+  apellido: String
+  empresa: String
+  edad: Float
+  tipo: String
+  emails: [Email!]!
+}
+
+type Email {
+  email: String!
+}
+
+input EmailInput {
+  email: String!
+}
+
+type Mutation {
+  createClient(input: ClienteInput!): ClienteType!
+  updateClient(input: ClienteInput!, id: String!): ClienteType!
+  deleteClient(id: String!): String!
+}
+
 type Query {
   hello: String!
+  getCliente(id: String!): ClienteType!
+  getClientes(limit: Float!): [ClienteType!]!
 }
